@@ -1,0 +1,8 @@
+{
+  "key.parry.parry": "格挡",
+  "message.parry.success": "格挡！",
+  "message.parry.success_append": "剩余格挡次数 （%d/%d）",
+  "message.parry.failure": "无法格挡，次数不足",
+  "message.parry.cooldown": "回复格挡次数中…… （%d/%d）",
+  "message.parry.key_failure": "你还没准备好格挡"
+}

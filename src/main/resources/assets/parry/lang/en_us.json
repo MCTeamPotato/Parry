@@ -1,0 +1,8 @@
+{
+  "key.parry.parry": "Parry",
+  "message.parry.success": "Parry!",
+  "message.parry.success_append": "Remaining Parry Count (%d/%d)",
+  "message.parry.failure": "Parry failed, not enough count",
+  "message.parry.cooldown": "Restoring parry count…… (%d/%d)",
+  "message.parry.key_failure": "You're not ready to parry yet"
+}
