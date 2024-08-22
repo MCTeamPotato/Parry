@@ -16,7 +16,7 @@ public class ModConfigs {
     public static ForgeConfigSpec.ConfigValue<String> parryEffect;
     public static ForgeConfigSpec.ConfigValue<Integer> parryKeyCoolDown, parryCoolDown, parryCount, parryNeedTime, parryEffectDuration, parryEffectAmplifier;
     public static ForgeConfigSpec.ConfigValue<List<String>> parryWeapon;
-    public static List<String> weaponList = List.of("minecraft:wooden_sword", "minecraft:stone_sword", "minecraft:iron_sword", "minecraft:golden_sword", "minecraft:diamond_sword", "minecraft:diamond_sword", "minecraft:trident", "minecraft:bow");
+    public static List<String> weaponList = List.of("minecraft:wooden_sword", "minecraft:stone_sword", "minecraft:iron_sword", "minecraft:golden_sword", "minecraft:diamond_sword", "minecraft:netherite_sword", "minecraft:trident", "minecraft:bow");
 
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
