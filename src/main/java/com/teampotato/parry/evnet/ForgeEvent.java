@@ -55,7 +55,7 @@ public class ForgeEvent {
             int hitsun = compoundTag.getInt("hitstun");
             if ((compoundTag.getBoolean("parry") && gameTime - compoundTag.getLong("parry_time") < ModConfigs.parryNeedTime.get()) || !ModConfigs.isParryCoolDown.get()){
                 if (hitsun > 0) {
-                    serverPlayer.level().playSound(
+                    serverPlayer.level.playSound(
                             null,
                             serverPlayer.getX(),
                             serverPlayer.getY(),

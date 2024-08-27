@@ -12,6 +12,6 @@ public class ModSound {
     public static final RegistryObject<SoundEvent> PARRY = register("parry");
 
     private static RegistryObject<SoundEvent> register(String name) {
-        return SOUNDS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Parry.MODID, name)));
+        return SOUNDS.register(name, () -> new SoundEvent(new ResourceLocation(Parry.MODID, name)));
     }
 }
