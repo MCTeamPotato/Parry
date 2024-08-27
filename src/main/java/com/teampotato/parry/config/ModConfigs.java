@@ -15,7 +15,7 @@ public class ModConfigs {
     public static ForgeConfigSpec.BooleanValue isParryKeyCoolDown, isParryCoolDown, parryEffectAmbient, parryEffectVisible, parryEffectShowIcon;
     public static ForgeConfigSpec.ConfigValue<String> parryEffect;
     public static ForgeConfigSpec.ConfigValue<Integer> parryKeyCoolDown, parryCoolDown, parryCount, parryNeedTime, parryEffectDuration, parryEffectAmplifier;
-    public static ForgeConfigSpec.ConfigValue<List<String>> parryWeapon;
+    public static ForgeConfigSpec.ConfigValue<List<? extends String>> parryWeapon;
     public static List<String> weaponList = List.of("minecraft:wooden_sword", "minecraft:stone_sword", "minecraft:iron_sword", "minecraft:golden_sword", "minecraft:diamond_sword", "minecraft:netherite_sword", "minecraft:trident", "minecraft:bow");
 
     static {
@@ -25,7 +25,7 @@ public class ModConfigs {
         parryKeyCoolDown = builder.define("parryKeyCoolDown", 20);
 
         isParryCoolDown = builder.define("isParryCoolDown", true);
-        parryWeapon = builder.define("parryWeapon", weaponList);
+        parryWeapon = builder.defineList("parryWeapon", Arrays.asList("minecraft:wooden_sword", "minecraft:stone_sword", "minecraft:iron_sword", "minecraft:golden_sword", "minecraft:diamond_sword", "minecraft:netherite_sword", "minecraft:trident", "minecraft:bow"), o -> o instanceof String);
         parryCoolDown = builder.define("parryCoolDown", 20);
         parryCount = builder.define("parryCounts", 5);
         parryNeedTime = builder.define("parryNeedTime", 20);

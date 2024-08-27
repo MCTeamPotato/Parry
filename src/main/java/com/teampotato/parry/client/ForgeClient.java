@@ -23,7 +23,7 @@ public class ForgeClient {
         if (localPlayer != null) {
             if (KeyBindings.PARRY.get().consumeClick()){
                 String item = ForgeRegistries.ITEMS.getKey(localPlayer.getMainHandItem().getItem()).toString();
-                if (!ModConfigs.weaponList.contains(item)) return;
+                if (!ModConfigs.parryWeapon.get().contains(item)) return;
 
                 long gametime = localPlayer.clientLevel.getGameTime();
                 CompoundTag compoundTag = localPlayer.getPersistentData();
