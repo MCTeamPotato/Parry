@@ -12,7 +12,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 public final class NetworkHandler {
     public static final String PROTOCOL_VERSION = "1";
-    public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(new ResourceLocation("parry", "main"), () -> {
+    public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(ResourceLocation.fromNamespaceAndPath("parry", "main"), () -> {
         return "1";
     }, "1"::equals, "1"::equals);
     private static int packetId = 0;

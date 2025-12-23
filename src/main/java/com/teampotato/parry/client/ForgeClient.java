@@ -9,11 +9,14 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 
 @Mod.EventBusSubscriber(modid = Parry.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ForgeClient {
@@ -22,8 +25,7 @@ public class ForgeClient {
         LocalPlayer localPlayer = Minecraft.getInstance().player;
         if (localPlayer != null) {
             if (KeyBindings.PARRY.get().consumeClick()){
-                String item = ForgeRegistries.ITEMS.getKey(localPlayer.getMainHandItem().getItem()).toString();
-                if (!ModConfigs.parryWeapon.get().contains(item)) return;
+                if (canBeWeapon(localPlayer.getMainHandItem())) return;
 
                 long gametime = localPlayer.clientLevel.getGameTime();
                 CompoundTag compoundTag = localPlayer.getPersistentData();
@@ -36,5 +38,9 @@ public class ForgeClient {
                 }
             }
         }
+    }
+
+    private static boolean canBeWeapon(@NotNull ItemStack stack) {
+        return stack.getAttributeModifiers(EquipmentSlot.MAINHAND).containsKey(Attributes.ATTACK_DAMAGE);
     }
 }

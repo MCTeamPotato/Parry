@@ -3,7 +3,6 @@ package com.teampotato.parry.evnet;
 import com.teampotato.parry.Parry;
 import com.teampotato.parry.config.ModConfigs;
 import com.teampotato.parry.misc.ModSound;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -79,7 +78,7 @@ public class ForgeEvent {
                     event.setCanceled(true);
                 }
                 if (hitsun <= 0){
-                    MobEffect mobEffect  = ForgeRegistries.MOB_EFFECTS.getValue(new ResourceLocation(ModConfigs.parryEffect.get()));
+                    MobEffect mobEffect  = ForgeRegistries.MOB_EFFECTS.getValue(ResourceLocation.parse(ModConfigs.parryEffect.get()));
                     serverPlayer.addEffect(new MobEffectInstance(
                             mobEffect,
                             ModConfigs.parryEffectDuration.get(),
